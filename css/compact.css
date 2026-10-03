@@ -1,0 +1,63 @@
+/* Shared compact navigation and fully visible product photography. */
+.nav { inset: 10px 0 auto; }
+.nav .nav-in { width: min(1120px, 94%); padding: 6px 12px; gap: 12px; border-radius: 20px; background: #080e20ed; }
+.nav .brand { gap: 8px; }
+.nav .brand img { width: 36px; height: 36px; object-fit: contain; }
+.nav .brand b { font-size: 17px; }
+.nav .brand small { font-size: 9px; }
+.nav .links { gap: 2px; }
+.nav .links a { padding: 9px 10px; font-size: 12px; border-radius: 12px; }
+.nav .cart-btn, .nav .nav-act .btn { padding: 9px 12px; font-size: 12px; min-height: 38px; border-radius: 12px; }
+.nav .nav-act .btn { box-shadow: none; }
+.pgrid:not(.agrid) { gap: 22px; }
+.pgrid:not(.agrid) .pc { border-radius: 22px; }
+.pgrid:not(.agrid) .pc-img { box-sizing: border-box; display: flex; align-items: center; justify-content: center; height: clamp(200px, 23vw, 290px); aspect-ratio: auto; padding: 22px 26px; }
+.pgrid:not(.agrid) .pc-img img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; object-position: center; transform: none; }
+.pgrid:not(.agrid) .pc:hover .pc-img img { transform: none; }
+.pgrid:not(.agrid) .pc-b { padding: 16px 22px 22px; gap: 12px; }
+.pgrid:not(.agrid) .tag { font-size: 11px; padding: 6px 10px; margin-bottom: 0; }
+.pgrid:not(.agrid) .pc-b h3 { font-size: clamp(20px, 1.8vw, 25px); line-height: 1.2; min-height: 2.4em; margin: 0; }
+.pgrid:not(.agrid) .pc-b > p { font-size: 13px; line-height: 1.7; min-height: 3.4em; margin: 0; }
+.pgrid:not(.agrid) .price { padding-top: 14px; margin-top: auto; }
+.pgrid:not(.agrid) .price b { font-size: 27px; margin-bottom: 0; }
+.pgrid:not(.agrid) .pc-a { padding-top: 4px; gap: 8px; }
+.pgrid:not(.agrid) .pc-a .btn { min-height: 42px; padding: 10px 14px; font-size: 12px; }
+/* Captions sit below the photos, so no part of a motorcycle is covered. */
+.tiles .gallery-photo { display: flex; flex-direction: column; aspect-ratio: auto; padding: 0; }
+.tiles .gallery-photo img { position: static; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: var(--photo-focus, center); padding: 0; transform: none; translate: none; background: #0a1020; }
+.tiles .gallery-photo:hover img { transform: none; translate: none; }
+.tiles .gallery-photo > span { position: static; flex: 1; width: 100%; min-height: 68px; padding: 14px 16px; background: #10192d; font-size: 13px; align-items: center; }
+@media (max-width: 1180px) { .nav .links { top: 62px; } .nav .links a { padding: 12px 14px; font-size: 14px; } }
+@media (max-width: 700px) {
+ .pgrid:not(.agrid) { grid-template-columns: 1fr; }
+ .pgrid:not(.agrid) .pc-img { height: 235px; padding: 18px; }
+ .pgrid:not(.agrid) .pc-b h3, .pgrid:not(.agrid) .pc-b > p { min-height: 0; }
+
+ .nav .nav-in { gap: 8px; }
+}
+
+.tiles .gallery-photo[hidden] { display: none; }
+
+/* Square thumbnails fill every tile; the viewer retains the original photo. */
+.gallery-photo[data-src*="koleksi-showroom"] { --photo-focus: 50% 65%; }
+.gallery-photo[data-src*="pelanggan-black"] { --photo-focus: 50% 48%; }
+.stack .sc img { object-position: center; }
+.stack .sc:nth-child(1) img { object-position: 50% 65%; }
+.stack .sc:nth-child(3) img { object-fit: contain; background: #10192d; }
+/* Wide editorial artwork keeps its original proportions and all lettering. */
+.pgrid.agrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.pgrid.agrid .pc, .pgrid.agrid .pc:first-child { grid-column: auto; display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: linear-gradient(145deg, #141e32, #090f21); }
+.pgrid.agrid .pc .pc-img { display: block; padding: 0; min-height: 0; aspect-ratio: auto; background: #080e18; border-bottom: 1px solid var(--ln); }
+.pgrid.agrid .pc .pc-img img { display: block; width: 100%; height: auto; object-fit: contain; transform: none; filter: none; }
+.pgrid.agrid .pc .pc-b { padding: 24px; gap: 14px; }
+.pgrid.agrid .pc h3 { font-size: clamp(21px, 2vw, 28px); line-height: 1.2; margin: 0; }
+.pgrid.agrid .pc .pc-b p { font-size: 14px; line-height: 1.75; }
+.pgrid.agrid .tag { align-self: flex-start; }
+.pgrid.agrid .pc-a { padding-top: 8px; }
+@media (max-width: 700px) { .pgrid.agrid { grid-template-columns: 1fr; gap: 22px; } .pgrid.agrid .pc .pc-b { padding: 20px; } }
+/* Keep article rows aligned even when a headline wraps. */
+.pgrid.agrid { align-items: stretch; }
+.pgrid.agrid .pc .pc-img { aspect-ratio: 3 / 1; flex: none; }
+.pgrid.agrid .pc .pc-img img { height: 100%; }
+.pgrid.agrid .pc .pc-a { margin-top: auto; }
+.stack .sc:nth-child(3) img { object-fit: cover; object-position: 52% center; }

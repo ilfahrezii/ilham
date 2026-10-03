@@ -1,0 +1,49 @@
+/* ==========================================================================
+   PERBAIKAN KONTEN — ukuran & crop gambar sepeda motor
+   File ini TIDAK menimpa css/style.css atau css/refinements.css, cuma
+   menambahkan aturan tipis di atasnya supaya foto sepeda motor tidak
+   di-zoom berlebihan (ban sampai kepotong). Aman ditambahkan tanpa perlu
+   lihat isi style.css yang sudah ada.
+   ========================================================================== */
+
+/* Kartu produk di beranda & halaman "Sepeda Motor Listrik" */
+.pc-img{
+  box-sizing: border-box;
+  padding: 16px;
+}
+.pc-img img{
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Strip thumbnail kecil di hero beranda */
+.ths .th img{
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Sepeda besar di hero beranda (slider) */
+.hero-v .slide img{
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Ubin produk di galeri (yang bertanda class "ct") */
+.gi.ct{
+  box-sizing: border-box;
+  padding: 10px;
+}
+.gi.ct img{
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Modal detail produk */
+.m-img img{
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 640px){
+  .pc-img{ padding: 10px; }
+}
